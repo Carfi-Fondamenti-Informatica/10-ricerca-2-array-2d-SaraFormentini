@@ -30,15 +30,19 @@ void inserimento(char mat [], int n){
 }
 
 
-int ricerca (char nomi[5][15], char cognomi [5][15], char nome[15], char cognome[15]){
+int ricerca(char nomi[5][15], char cognomi[5][15], char nome[15], char cognome[15]){
     for(int i=0;i<5;i++){
-        for(int j=0;j<15;j++){
-            if (nomi[i][j]!=nome[j] || cognomi [i][j]!= cognome [j]){
-                return -1;
-            }else{
-                return i;
+            int j=0;
+    for(j=0;j<15;j++) {
+       if (cognomi[i][j] != cognome[j]) {
+                break;
+       }if (nomi[i][j] != nome[j]) {
+            break;
             }
-        }
+        }if(j==15) {
+          return i;
     }
-}
+    }
 
+    return -1;
+}
