@@ -21,7 +21,8 @@ void inserimento(char nomi[5][15], char cognomi[5][15]){
 
 
 void inserimento(char mat [], int n){
-    char temp[n];
+    char temp[n*10];
+     init(temp,n*10);
     cin>>temp;
     for(int i=0; i<15;i++){
         temp [i]= mat[i];
